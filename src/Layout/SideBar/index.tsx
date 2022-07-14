@@ -2,14 +2,14 @@ import { Grid } from "@mui/material";
 import Container from "@mui/material/Container";
 import React from "react";
 
-const Home = () => {
+const SideBar = () => {
   return (
     <>
-      <Container>
-        <Grid container spacing={2}></Grid>
-      </Container>
+      <Grid>
+        <h1>Hello</h1>
+      </Grid>
     </>
   );
 };
 
-export default Home;
+export default SideBar;
