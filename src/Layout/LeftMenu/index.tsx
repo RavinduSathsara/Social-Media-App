@@ -1,49 +1,57 @@
 import * as React from "react";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemText from "@mui/material/ListItemText";
-import ListItemAvatar from "@mui/material/ListItemAvatar";
-import Avatar from "@mui/material/Avatar";
-import ImageIcon from "@mui/icons-material/Image";
-import WorkIcon from "@mui/icons-material/Work";
-import BeachAccessIcon from "@mui/icons-material/BeachAccess";
-import Divider from "@mui/material/Divider";
+import HomeIcon from "@mui/icons-material/Home";
+import NotificationsIcon from "@mui/icons-material/Notifications";
+import EmailIcon from "@mui/icons-material/Email";
+import BookmarkIcon from "@mui/icons-material/Bookmark";
+import PersonIcon from "@mui/icons-material/Person";
+import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
+import { Grid, Button, Typography } from "@mui/material";
 
-export default function LeftMenu() {
+const style = {
+  width: "100%",
+  maxWidth: 360,
+  margin: 15,
+};
+
+export default function LeftMenus() {
   return (
-    <List
-      sx={{
-        width: "100%",
-        maxWidth: 360,
-        bgcolor: "background.paper",
-      }}
-    >
-      <ListItem>
-        <ListItemAvatar>
-          <Avatar>
-            <ImageIcon />
-          </Avatar>
-        </ListItemAvatar>
-        <ListItemText primary="Photos" secondary="Jan 9, 2014" />
-      </ListItem>
-      <Divider variant="inset" component="li" />
-      <ListItem>
-        <ListItemAvatar>
-          <Avatar>
-            <WorkIcon />
-          </Avatar>
-        </ListItemAvatar>
-        <ListItemText primary="Work" secondary="Jan 7, 2014" />
-      </ListItem>
-      <Divider variant="inset" component="li" />
-      <ListItem>
-        <ListItemAvatar>
-          <Avatar>
-            <BeachAccessIcon />
-          </Avatar>
-        </ListItemAvatar>
-        <ListItemText primary="Vacation" secondary="July 20, 2014" />
-      </ListItem>
-    </List>
+    <Grid container sx={style}>
+      <Grid item xs={12}>
+        <Button>
+          <HomeIcon sx={{ mr: 2 }} color="primary" />
+          <Typography variant="h6">Home</Typography>
+        </Button>
+      </Grid>
+      <Grid item xs={12}>
+        <Button>
+          <NotificationsIcon sx={{ mr: 2 }} color="primary" />
+          <Typography variant="h6">Notifications</Typography>
+        </Button>
+      </Grid>
+      <Grid item xs={12}>
+        <Button>
+          <EmailIcon sx={{ mr: 2 }} color="primary" />
+          <Typography variant="h6">Messages</Typography>
+        </Button>
+      </Grid>
+      <Grid item xs={12}>
+        <Button>
+          <BookmarkIcon sx={{ mr: 2 }} color="primary" />
+          <Typography variant="h6">Bookmarks</Typography>
+        </Button>
+      </Grid>
+      <Grid item xs={12}>
+        <Button>
+          <FormatListBulletedIcon sx={{ mr: 2 }} color="primary" />
+          <Typography variant="h6">Lists</Typography>
+        </Button>
+      </Grid>
+      <Grid item xs={12}>
+        <Button>
+          <PersonIcon sx={{ mr: 2 }} color="primary" />
+          <Typography variant="h6">Profile</Typography>
+        </Button>
+      </Grid>
+    </Grid>
   );
 }
