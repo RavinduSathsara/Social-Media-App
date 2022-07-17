@@ -15,6 +15,7 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
+import Avatar from "@mui/material/Avatar";
 import { Container } from "@mui/system";
 
 const Search = styled("div")(({ theme }) => ({
@@ -149,7 +150,7 @@ export default function AppNavigation() {
           aria-haspopup="true"
           color="inherit"
         >
-          <AccountCircle />
+          <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
         </IconButton>
         <p>Profile</p>
       </MenuItem>
@@ -223,7 +224,7 @@ export default function AppNavigation() {
                 onClick={handleProfileMenuOpen}
                 color="inherit"
               >
-                <AccountCircle />
+                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
               </IconButton>
             </Box>
             <Box sx={{ display: { xs: "flex", md: "none" } }}>
