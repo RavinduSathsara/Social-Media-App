@@ -13,7 +13,6 @@ const Home = () => {
         }}
       >
         <Box style={{ maxHeight: "100vh", overflow: "auto" }}>
-          <Post /> <Post /> <Post /> <Post /> <Post /> <Post /> <Post />{" "}
           <Post />
         </Box>
       </Container>
