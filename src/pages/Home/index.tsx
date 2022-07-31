@@ -1,12 +1,12 @@
-import { Grid, Box } from "@mui/material";
-import Container from "@mui/material/Container";
 import React, { useEffect, useState } from "react";
+import { Grid, Box, Button } from "@mui/material";
+import Container from "@mui/material/Container";
 import Post from "../../components/post";
-import { motion } from "framer-motion";
 import { getAllPosts } from "../../services/Posts";
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
+  const [show, setShow] = useState(10);
 
   const featchAllPosts = async () => {
     const data = await getAllPosts();
@@ -15,6 +15,12 @@ const Home = () => {
   useEffect(() => {
     featchAllPosts();
   }, []);
+
+  type PostProps = {
+    userId: number;
+    title: string;
+    body: string;
+  };
 
   return (
     <>
@@ -25,19 +31,17 @@ const Home = () => {
         }}
       >
         <Box style={{ maxHeight: "100vh", overflow: "auto" }}>
-          {posts.map((post: any) => (
-            <motion.div
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{
-                type: "spring",
-                stiffness: 260,
-                damping: 20,
-              }}
-            >
-              <Post userID={post.userId} title={post.title} body={post.body} />
-            </motion.div>
+          {posts.slice(0, show).map((post: PostProps) => (
+            <Post userID={post.userId} title={post.title} body={post.body} />
           ))}
+          <Button
+            onClick={() => {
+              setShow(show + 10);
+            }}
+            style={{ marginLeft: 480, marginBottom: 80 }}
+          >
+            show more
+          </Button>
         </Box>
       </Container>
     </>
