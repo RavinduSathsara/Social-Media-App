@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Grid, Box, Button } from "@mui/material";
+import { Button } from "@mui/material";
 import Container from "@mui/material/Container";
 import Post from "../../components/post";
 import { getAllPosts } from "../../services/Posts";

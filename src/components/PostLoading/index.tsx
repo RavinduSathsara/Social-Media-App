@@ -7,7 +7,7 @@ export default function PostLoading() {
     <Stack spacing={1}>
       <Skeleton
         variant="rectangular"
-        sx={{ maxWidth: 700, height: 400, m: 15, borderRadius: 1.5 }}
+        sx={{ maxWidth: "85%", m: "5%", height: 400, borderRadius: 1.5 }}
       />
     </Stack>
   );

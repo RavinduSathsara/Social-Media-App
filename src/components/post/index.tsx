@@ -1,18 +1,15 @@
 import * as React from "react";
-import { styled } from "@mui/material/styles";
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
-import Collapse from "@mui/material/Collapse";
 import Avatar from "@mui/material/Avatar";
-import IconButton, { IconButtonProps } from "@mui/material/IconButton";
+import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import { red } from "@mui/material/colors";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShareIcon from "@mui/icons-material/Share";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { motion, AnimatePresence } from "framer-motion";
 import { getUser } from "../../services/Users";
@@ -46,7 +43,7 @@ export default function Post({ title, body, userID }: PostProps) {
 
   React.useEffect(() => {
     fetchUser(userID);
-  }, []);
+  });
 
   return (
     <Grid>
@@ -59,7 +56,7 @@ export default function Post({ title, body, userID }: PostProps) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           />
-          <Card sx={{ maxWidth: "100%", m: "5%" }}>
+          <Card sx={{ maxWidth: "85%", m: "5%" }}>
             <CardHeader
               avatar={
                 <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
