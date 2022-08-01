@@ -59,7 +59,7 @@ export default function Post({ title, body, userID }: PostProps) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           />
-          <Card sx={{ maxWidth: 700, m: 15 }}>
+          <Card sx={{ maxWidth: "100%", m: "5%" }}>
             <CardHeader
               avatar={
                 <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">

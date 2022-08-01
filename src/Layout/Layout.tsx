@@ -10,16 +10,16 @@ const Layout = () => {
     <>
       <AppNavigation />
 
-      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-        <Grid item xs={2}>
+      <Grid>
+        {/* <Grid item xs={2}>
           <LeftMenu />
-        </Grid>
+        </Grid> */}
         <Grid item xs={8}>
           <Home />
         </Grid>
-        <Grid item xs={2}>
+        {/* <Grid item xs={2}>
           <SideBar />
-        </Grid>
+        </Grid> */}
       </Grid>
     </>
   );

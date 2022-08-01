@@ -30,19 +30,17 @@ const Home = () => {
           height: "100%",
         }}
       >
-        <Box style={{ maxHeight: "100vh", overflow: "auto" }}>
-          {posts.slice(0, show).map((post: PostProps) => (
-            <Post userID={post.userId} title={post.title} body={post.body} />
-          ))}
-          <Button
-            onClick={() => {
-              setShow(show + 10);
-            }}
-            style={{ marginLeft: 480, marginBottom: 80 }}
-          >
-            show more
-          </Button>
-        </Box>
+        {posts.slice(0, show).map((post: PostProps) => (
+          <Post userID={post.userId} title={post.title} body={post.body} />
+        ))}
+        <Button
+          onClick={() => {
+            setShow(show + 10);
+          }}
+          style={{ marginLeft: 480, marginBottom: 80 }}
+        >
+          show more
+        </Button>
       </Container>
     </>
   );
