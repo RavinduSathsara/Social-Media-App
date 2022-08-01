@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Grid, Box, Button } from "@mui/material";
+import { Button } from "@mui/material";
 import Container from "@mui/material/Container";
 import Post from "../../components/post";
 import { getAllPosts } from "../../services/Posts";
@@ -30,19 +30,17 @@ const Home = () => {
           height: "100%",
         }}
       >
-        <Box style={{ maxHeight: "100vh", overflow: "auto" }}>
-          {posts.slice(0, show).map((post: PostProps) => (
-            <Post userID={post.userId} title={post.title} body={post.body} />
-          ))}
-          <Button
-            onClick={() => {
-              setShow(show + 10);
-            }}
-            style={{ marginLeft: 480, marginBottom: 80 }}
-          >
-            show more
-          </Button>
-        </Box>
+        {posts.slice(0, show).map((post: PostProps) => (
+          <Post userID={post.userId} title={post.title} body={post.body} />
+        ))}
+        <Button
+          onClick={() => {
+            setShow(show + 10);
+          }}
+          style={{ marginLeft: 480, marginBottom: 80 }}
+        >
+          show more
+        </Button>
       </Container>
     </>
   );
